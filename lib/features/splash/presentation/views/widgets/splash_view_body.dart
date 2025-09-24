@@ -17,6 +17,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
+    _initScalingAnimation();
+  }
+
+  void _initScalingAnimation() {
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
