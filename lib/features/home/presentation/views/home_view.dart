@@ -1,3 +1,5 @@
+import 'package:bookly/features/home/presentation/views/widgets/home_view_body.dart';
+import 'package:bookly/features/splash/presentation/views/widgets/custom_home_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomeView extends StatelessWidget {
@@ -7,6 +9,9 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return const PopScope(
       canPop: false,
-      child: Scaffold());
+      child: Scaffold(
+        appBar:CustomHomeAppBar() ,
+        body:HomeViewBody() ,
+      ));
   }
 }
