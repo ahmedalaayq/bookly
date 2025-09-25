@@ -1,8 +1,8 @@
 import 'package:bookly/features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
 import 'package:flutter/material.dart';
 
-class CustomFeatureListView extends StatelessWidget {
-  const CustomFeatureListView({super.key, required this.mediaQuery});
+class CustomFeatureBooksListView extends StatelessWidget {
+  const CustomFeatureBooksListView({super.key, required this.mediaQuery});
   final MediaQueryData mediaQuery;
   @override
   Widget build(BuildContext context) {

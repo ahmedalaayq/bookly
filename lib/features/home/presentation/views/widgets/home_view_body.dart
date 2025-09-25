@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'custom_feature_list_view.dart';
+import 'custom_feature_books_list_view.dart';
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
@@ -13,7 +13,7 @@ class HomeViewBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          CustomFeatureListView(mediaQuery: mediaQuery),
+          CustomFeatureBooksListView(mediaQuery: mediaQuery),
         ],
       ),
     );
