@@ -1,20 +1,21 @@
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class CustomFeatureListViewItem extends StatelessWidget {
-  const CustomFeatureListViewItem({
+class CustomFeaturedListViewItem extends StatelessWidget {
+  const CustomFeaturedListViewItem({
     super.key,
-    required this.mediaQuery,
+    required this.mediaQuery, required this.image,
   });
   final MediaQueryData mediaQuery;
+  final String image;
+
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 2.7 / 4,
       child: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(Assets.testImage),
+            image: AssetImage(image),
             fit: BoxFit.fill,
           ),
         ),
