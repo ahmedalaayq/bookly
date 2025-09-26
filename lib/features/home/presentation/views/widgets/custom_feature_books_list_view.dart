@@ -20,6 +20,7 @@ class CustomFeatureBooksListView extends StatelessWidget {
     return SizedBox(
       height: mediaQuery.size.height * 0.45,
       child: ListView.separated(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(vertical: 24,horizontal: 16),
         separatorBuilder: (context, index) {
           return const SizedBox(width: 16);

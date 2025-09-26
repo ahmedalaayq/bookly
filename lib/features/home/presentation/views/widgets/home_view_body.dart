@@ -11,14 +11,14 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final MediaQueryData mediaQuery = MediaQuery.of(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           CustomFeatureBooksListView(mediaQuery: mediaQuery),
           Text(
             'best seller'.capitalizeEachWord(),
-            style: Styles.titleMedium,
+            style: Styles.textStyle18,
           ),
           const SizedBox(height: 16),
           const BestSellerListViewItem(),
@@ -37,19 +37,27 @@ class BestSellerListViewItem extends StatelessWidget {
       height: 150,
       child: Row(
         children: [
-        AspectRatio(
-      aspectRatio: 2.5 / 4,
-      child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(Assets.testImage2),
-            fit: BoxFit.fill,
+          AspectRatio(
+            aspectRatio: 2.5 / 4,
+            child: Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(Assets.testImage2),
+                  fit: BoxFit.fill,
+                ),
+              ),
+            ),
           ),
-        ),
-      ),
-    ),
-          const Column(children: [
-      
+          const SizedBox(width: 30,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: MediaQuery.of(context).size.width *0.5,
+                child: const Text(
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  'Harry Potter and the Goblet of Fire',style: Styles.textStyle20,))
             ],
           ),
         ],
