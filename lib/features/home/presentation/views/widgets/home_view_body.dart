@@ -1,10 +1,7 @@
-import 'package:bookly/core/constants.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/helper.dart';
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'best_seller_list_view_item.dart';
 import 'custom_feature_books_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -15,16 +12,22 @@ class HomeViewBody extends StatelessWidget {
     final MediaQueryData mediaQuery = MediaQuery.of(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomFeatureBooksListView(mediaQuery: mediaQuery),
-          Text(
-            'best seller'.capitalizeEachWord(),
-            style: Styles.textStyle18,
+      child: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: CustomFeatureBooksListView(mediaQuery: mediaQuery),
           ),
-          const SizedBox(height: 16),
-          const BestSellerListViewItem(),
+          SliverToBoxAdapter(
+            child: Text(
+              'best seller'.capitalizeEachWord(),
+              style: Styles.textStyle18,
+            ),
+          ),
+          const SliverToBoxAdapter(child: SizedBox(height: 16)),
+          const SliverPadding(
+            padding: EdgeInsets.only(bottom: 32),
+            sliver: BestSellerListView()),
         ],
       ),
     );
