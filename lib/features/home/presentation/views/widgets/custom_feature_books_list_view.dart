@@ -35,7 +35,6 @@ class CustomFeatureBooksListView extends StatelessWidget {
           return GestureDetector(
             onTap: onTapFeatureItem,
             child: CustomFeaturedListViewItem(
-              mediaQuery: mediaQuery,
               image: data[index],
             ),
           );
