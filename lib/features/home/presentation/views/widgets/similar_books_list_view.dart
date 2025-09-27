@@ -1,14 +1,9 @@
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
 import 'package:flutter/material.dart';
-
-class CustomFeatureBooksListView extends StatelessWidget {
-  const CustomFeatureBooksListView({
-    super.key,
-    required this.onTapFeatureItem,
-    this.height, required this.mediaQuery,
-  });
-  final VoidCallback onTapFeatureItem;
+class SimilarBooksListView extends StatelessWidget {
+  const SimilarBooksListView({super.key, required this.onTapSimilarItem, required this.mediaQuery, this.height});
+final VoidCallback onTapSimilarItem;
   final MediaQueryData mediaQuery;
   static final List<String> data = [
     Assets.testImage2,
@@ -22,12 +17,11 @@ class CustomFeatureBooksListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: mediaQuery.size.height * 0.45,
+      height: mediaQuery.size.height * 0.15,
       child: ListView.separated(
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(
-          vertical: 24,
-          horizontal: 16,
+          horizontal: 24,
         ),
         separatorBuilder: (context, index) {
           return const SizedBox(width: 16);
@@ -36,7 +30,7 @@ class CustomFeatureBooksListView extends StatelessWidget {
         itemCount: data.length,
         itemBuilder: (context, index) {
           return GestureDetector(
-            onTap: onTapFeatureItem,
+            onTap: onTapSimilarItem,
             child: CustomFeaturedListViewItem(image: data[index]),
           );
         },
