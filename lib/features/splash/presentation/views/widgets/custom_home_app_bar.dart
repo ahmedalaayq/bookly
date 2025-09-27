@@ -1,6 +1,7 @@
 import 'package:bookly/core/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
 class CustomHomeAppBar extends StatelessWidget
@@ -17,7 +18,9 @@ class CustomHomeAppBar extends StatelessWidget
         leading: Image.asset(Assets.logo,height: 16,),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(searchView);
+            },
             icon: const Icon(
               IconlyLight.search,
               color: Colors.white,
