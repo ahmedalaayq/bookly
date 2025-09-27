@@ -10,8 +10,9 @@ class HomeView extends StatelessWidget {
     return const PopScope(
       canPop: false,
       child: Scaffold(
-        appBar:CustomHomeAppBar() ,
-        body:HomeViewBody() ,
-      ));
+        appBar: CustomHomeAppBar(),
+        body: HomeViewBody(),
+      ),
+    );
   }
 }

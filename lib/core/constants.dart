@@ -6,3 +6,8 @@ const Duration transitionDuration = Duration(milliseconds: 250);
 const String gtSectraFine = 'Sectra';
 final String montserratFamily =
     GoogleFonts.montserrat().fontFamily ?? gtSectraFine;
+
+const splashView = '/splashView';
+const homeView = '/homeView';
+const bookDetailsView = '/bookDetailsView';
+

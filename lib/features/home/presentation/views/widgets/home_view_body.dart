@@ -1,11 +1,7 @@
 import 'package:bookly/core/utils/helper.dart';
 import 'package:bookly/core/utils/styles.dart';
-import 'package:bookly/features/home/presentation/views/book_details_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'custom_feature_books_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -23,10 +19,7 @@ class HomeViewBody extends StatelessWidget {
             child: CustomFeatureBooksListView(
               mediaQuery: mediaQuery,
               onTapFeatureItem: () {
-                Get.to(
-                  transition: Transition.fadeIn,
-                  const BookDetailsView(),
-                );
+                
               },
             ),
           ),
@@ -41,10 +34,10 @@ class HomeViewBody extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 32),
             sliver: BestSellerListView(
               onTapItem: () {
-                Get.to(
-                  transition: Transition.fadeIn,
-                  const BookDetailsView(),
-                );
+                // Get.to(
+                //   transition: Transition.fadeIn,
+                //   const BookDetailsView(),
+                // );
               },
             ),
           ),
