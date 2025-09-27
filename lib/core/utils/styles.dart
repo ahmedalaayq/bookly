@@ -1,30 +1,31 @@
 import 'package:bookly/core/constants.dart';
+import 'package:bookly/core/utils/size_config.dart';
 import 'package:flutter/widgets.dart';
 
 abstract class Styles {
   Styles._();
 
-  static const textStyle18 = TextStyle(
-    fontSize: 18,
+  static final textStyle18 = TextStyle(
+    fontSize: 18.sp,
     fontWeight: FontWeight.w600,
   );
-  static const textStyle20 = TextStyle(
-    fontSize: 20,
+  static final textStyle20 = TextStyle(
+    fontSize: 20.sp,
     fontWeight: FontWeight.normal,
   );
   
-  static const textStyle30 = TextStyle(
-    fontSize: 30,
+  static final textStyle30 = TextStyle(
+    fontSize: 30.sp,
     fontFamily: gtSectraFine,
   );
 
-  static const textStyle14 = TextStyle(
-    fontSize: 14,
+  static final textStyle14 = TextStyle(
+    fontSize: 14.sp,
     fontWeight: FontWeight.normal,
   );
 
-  static const textStyle16 = TextStyle(
-    fontSize: 14,
+  static final textStyle16 = TextStyle(
+    fontSize: 16.sp,
     fontWeight: FontWeight.w500,
   );
 }

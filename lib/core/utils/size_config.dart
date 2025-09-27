@@ -6,6 +6,7 @@ class SizeConfig {
   static late double designWidth;
   static late double designHeight;
   static late TextScaler textScaleFactor;
+  static late Orientation orientation;
 
   static void init(
     BuildContext context, {
@@ -13,8 +14,14 @@ class SizeConfig {
     double dHeight = 700,
   }) {
     final mq = MediaQuery.of(context);
-    screenWidth = mq.size.width;
-    screenHeight = mq.size.height;
+    orientation = mq.orientation;
+    if (orientation == Orientation.portrait) {
+      screenWidth = mq.size.width;
+      screenHeight = mq.size.height;
+    } else {
+      screenHeight = mq.size.width;
+      screenWidth = mq.size.height;
+    }
     designWidth = dWidth;
     designHeight = dHeight;
     textScaleFactor = mq.textScaler;
