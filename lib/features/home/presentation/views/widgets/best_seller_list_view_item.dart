@@ -4,8 +4,8 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'book_rating.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key, required this.index});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key, required this.index});
   final int index;
 
   @override

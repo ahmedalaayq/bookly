@@ -12,7 +12,7 @@ class BestSellerListView extends StatelessWidget {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: onTapItem,
-          child: BestSellerListViewItem(index: index),
+          child: BookListViewItem(index: index),
         );
       },
       separatorBuilder: (context, index) {

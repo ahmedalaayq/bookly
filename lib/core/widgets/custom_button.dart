@@ -1,7 +1,6 @@
 import 'package:bookly/core/constants.dart';
 import 'package:bookly/core/utils/size_config.dart';
 import 'package:bookly/core/utils/styles.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
