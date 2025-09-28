@@ -15,7 +15,7 @@ class CustomHomeAppBar extends StatelessWidget
       child: AppBar(
         backgroundColor: primaryColor,
         leadingWidth: 80,
-        leading: Image.asset(Assets.logo,height: 16,),
+        leading: Image.asset(Assets.logo, height: 16),
         actions: [
           IconButton(
             onPressed: () {

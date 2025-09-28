@@ -13,7 +13,7 @@ abstract class Styles {
     fontSize: 20.sp,
     fontWeight: FontWeight.normal,
   );
-  
+
   static final textStyle30 = TextStyle(
     fontSize: 30.sp,
     fontFamily: gtSectraFine,

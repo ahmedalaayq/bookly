@@ -1,5 +1,6 @@
 import 'package:bookly/core/utils/helper.dart';
 import 'package:flutter/material.dart';
+
 class ScalingSplashText extends StatelessWidget {
   const ScalingSplashText({
     super.key,

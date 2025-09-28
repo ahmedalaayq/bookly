@@ -8,7 +8,7 @@ class FetchFeaturedBooksUseCase extends UseCase<List<BookEntity>> {
   FetchFeaturedBooksUseCase({required this.homeRepo});
   final HomeRepo homeRepo;
   @override
-  Future<Either<Failure, List<BookEntity>>> call() async{
+  Future<Either<Failure, List<BookEntity>>> call() async {
     // check permission
     return await homeRepo.fetchFeaturedBooks();
   }

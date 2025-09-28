@@ -48,7 +48,7 @@ class BookListViewItem extends StatelessWidget {
                 const SizedBox(height: 3),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
-                  child:  Text(
+                  child: Text(
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
                     'J.k. Rowling',

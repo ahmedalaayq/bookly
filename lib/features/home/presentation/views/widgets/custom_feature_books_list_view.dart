@@ -6,7 +6,8 @@ class CustomFeatureBooksListView extends StatelessWidget {
   const CustomFeatureBooksListView({
     super.key,
     required this.onTapFeatureItem,
-    this.height, required this.mediaQuery,
+    this.height,
+    required this.mediaQuery,
   });
   final VoidCallback onTapFeatureItem;
   final MediaQueryData mediaQuery;

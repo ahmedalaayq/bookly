@@ -11,32 +11,30 @@ class SearchViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(
-        left: 16.sp,
-        right: 16.sp,
-        top: 12.sp
-      ),
+      padding: EdgeInsets.only(left: 16.sp, right: 16.sp, top: 12.sp),
 
       child: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-           SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: Form(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const CustomSearchTextFormField(),
                   const SizedBox(height: 16),
-             Text(
-              'search result'.capitalizeEachWord(),
-              style: Styles.textStyle20.copyWith(fontWeight: FontWeight.bold),
-            ),
+                  Text(
+                    'search result'.capitalizeEachWord(),
+                    style: Styles.textStyle20.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   const SizedBox(height: 16),
                 ],
               ),
             ),
           ),
-          
+
           SearchResultListView(onTapItem: () {}),
         ],
       ),
@@ -51,7 +49,6 @@ class SearchResultListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverList.separated(
-      
       itemCount: 10,
       itemBuilder: (context, index) {
         return GestureDetector(

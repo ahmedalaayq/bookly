@@ -3,6 +3,7 @@ import 'package:bookly/core/utils/size_config.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'book_rating.dart';
+
 class SimilarBooksSection extends StatelessWidget {
   const SimilarBooksSection({super.key});
 

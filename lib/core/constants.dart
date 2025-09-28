@@ -12,4 +12,3 @@ const splashView = '/splashView';
 const homeView = '/homeView';
 const bookDetailsView = '/bookDetailsView';
 const searchView = '/searchView';
-

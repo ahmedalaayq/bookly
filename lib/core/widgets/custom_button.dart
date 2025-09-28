@@ -10,14 +10,15 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     this.backgroundColor = Colors.white,
     this.textColor = primaryColor,
-    this.borderRadius,  this.fontSize,
+    this.borderRadius,
+    this.fontSize,
   });
   final String text;
   final VoidCallback onPressed;
   final Color backgroundColor;
   final Color textColor;
   final BorderRadius? borderRadius;
-  final double ?fontSize;
+  final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
