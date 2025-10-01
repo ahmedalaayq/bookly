@@ -6,8 +6,11 @@ class ApiService {
 
   static const String baseUrl = 'https://www.googleapis.com/books/v1/';
 
-  Future<Map<String, dynamic>> get({required String endPoint}) async {
-    var response = await _dio.get('$baseUrl$endPoint');
+  Future<Map<String, dynamic>> get({required String endPoint , Map<String,dynamic> ?queryParameters}) async {
+    var response = await _dio.get('$baseUrl$endPoint',queryParameters: 
+    {
+        ...queryParameters ?? {},
+    });
     return response.data;
   }
 
