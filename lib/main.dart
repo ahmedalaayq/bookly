@@ -1,6 +1,9 @@
+import 'package:bookly/core/utils/api_service.dart';
 import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/dark_theme.dart';
 import 'package:bookly/core/utils/size_config.dart';
+import 'package:bookly/features/home/data/data_sources/home_remote_data_source.dart';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -11,6 +14,13 @@ void main() async {
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
   ]);
+
+  final Dio dio = Dio();
+  final ApiService apiService = ApiService(dio);
+
+  HomeRemoteDataSourceImpl homeRemoteDataSourceImpl =
+      HomeRemoteDataSourceImpl(apiService);
+  homeRemoteDataSourceImpl.fetchFeaturedBooks();
   runApp(const Bookly());
 }
 

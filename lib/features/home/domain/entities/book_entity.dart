@@ -14,4 +14,13 @@ class BookEntity {
     required this.price,
     required this.rating,
   });
+
+  // @override
+  // toString() {
+  //   return 'BookEntity(bookId: $bookId, title: $title, image: $image, author: $author, price: $price, rating: $rating)';
+  // }
+
+  printData() {
+    return 'BookEntity(bookId: $bookId, title: $title, image: $image, author: $author, price: $price, rating: $rating)';
+  }
 }
