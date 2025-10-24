@@ -12,3 +12,5 @@ const splashView = '/splashView';
 const homeView = '/homeView';
 const bookDetailsView = '/bookDetailsView';
 const searchView = '/searchView';
+const String featuredBox = 'featured_box';
+const String newestBox = 'newest_box';
