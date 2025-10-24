@@ -1,10 +1,12 @@
 import 'dart:developer';
 
+import 'package:bookly/core/constants.dart';
 import 'package:bookly/core/logger.dart';
 import 'package:bookly/core/utils/api_endpoints.dart';
 import 'package:bookly/core/utils/api_service.dart';
 import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchFeaturedBooks();
@@ -24,8 +26,11 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
         'Filtering': 'free-ebooks',
       },
     );
+    List<BookEntity> allData = getBooksList(data ?? {});
+    var box = Hive.box(featuredBox);
+    await box.addAll(allData);
 
-    return getBooksList(data);
+    return getBooksList(data ?? {});
   }
 
   @override
@@ -39,7 +44,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
       },
     );
 
-    return getBooksList(data);
+    return getBooksList(data!);
   }
 
   List<BookEntity> getBooksList(Map<String, dynamic> data) {
