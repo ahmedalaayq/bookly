@@ -1,4 +1,6 @@
+import 'package:bookly/core/constants.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 abstract class HomeLocalDataSource {
   // local data source --> cache data get directly
@@ -6,19 +8,17 @@ abstract class HomeLocalDataSource {
   List<BookEntity> fetchNewestBooks();
 }
 
-class HomeLocalDataSourceImpl extends HomeLocalDataSource 
-{
+class HomeLocalDataSourceImpl extends HomeLocalDataSource {
+  late Box<BookEntity> box;
   @override
   List<BookEntity> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+    box = Hive.box<BookEntity>(featuredBox);
+    return box.values.toList();
   }
 
   @override
   List<BookEntity> fetchNewestBooks() {
-    // TODO: implement fetchNewestBooks
-    throw UnimplementedError();
+    box = Hive.box<BookEntity>(newestBox);
+    return box.values.toList();
   }
-
-  
 }
