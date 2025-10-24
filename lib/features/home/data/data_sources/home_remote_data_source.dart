@@ -1,10 +1,7 @@
-import 'dart:developer';
-
 import 'package:bookly/core/constants.dart';
-import 'package:bookly/core/logger.dart';
+import 'package:bookly/core/functions/get_box_list.dart';
 import 'package:bookly/core/utils/api_endpoints.dart';
 import 'package:bookly/core/utils/api_service.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -45,18 +42,5 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
     );
 
     return getBooksList(data!);
-  }
-
-  List<BookEntity> getBooksList(Map<String, dynamic> data) {
-    List<BookEntity> books = [];
-
-    for (int i = 0; i < data.length; i++) {
-      books.add(BookModel.fromJson(data['items'][i]));
-    }
-
-    for (var book in books) {
-      LoggerImpl().dataLog(book.toString());
-    }
-    return books;
   }
 }
